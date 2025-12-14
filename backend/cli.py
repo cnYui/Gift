@@ -44,12 +44,29 @@ def parse_feishu_to_participants(feishu_records: List[dict]) -> List[Participant
         
         # 如果有问卷答案，解析为 QuizItem 列表
         if quiz_answer:
-            # 假设答案格式为 "A" 或 "A,B,C" 或其他格式
             if isinstance(quiz_answer, str):
-                quiz_data.append(QuizItem(
-                    question_text="用户选择题",
-                    selected_option=quiz_answer
-                ))
+                # 解析多行格式的问卷答案
+                # 格式: "Q5: A. 壁炉里跳动的橙色火光\nQ4: C. 带有金属光泽的丝绸披肩\n..."
+                lines = quiz_answer.strip().split("\n")
+                for line in lines:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    # 尝试解析 "Q5: A. xxx" 格式
+                    if ": " in line:
+                        parts = line.split(": ", 1)
+                        question_id = parts[0].strip()  # Q5
+                        answer = parts[1].strip() if len(parts) > 1 else ""  # A. xxx
+                        quiz_data.append(QuizItem(
+                            question_text=question_id,
+                            selected_option=answer
+                        ))
+                    else:
+                        # 无法解析的格式，整行作为答案
+                        quiz_data.append(QuizItem(
+                            question_text="问题",
+                            selected_option=line
+                        ))
             elif isinstance(quiz_answer, list):
                 for i, ans in enumerate(quiz_answer):
                     quiz_data.append(QuizItem(
