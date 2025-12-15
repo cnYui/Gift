@@ -313,7 +313,7 @@
                                 <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰2">
                                     <img src="images/decoration_2.png" alt="装饰2" class="w-8 h-8 object-contain">
                                 </button>
-                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110 selected" data-value="装饰3">
+                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰3">
                                     <img src="images/decoration_3.png" alt="装饰3" class="w-9 h-9 object-contain">
                                 </button>
                                 <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰4">
@@ -356,7 +356,36 @@
         </div>
     </div>
 
+    <!-- Background Music -->
+    <audio id="bgm" loop preload="auto">
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
+        // Background Music Control
+        const bgm = document.getElementById('bgm');
+        bgm.volume = 0.7; // Set volume to 70%
+        let bgmStarted = false;
+
+        function playBgm() {
+            if (!bgmStarted) {
+                bgm.play().then(() => {
+                    bgmStarted = true;
+                    console.log("BGM started playing");
+                }).catch(error => {
+                    console.log("BGM autoplay prevented:", error);
+                });
+            }
+        }
+
+        // Try autoplay on load
+        document.addEventListener('DOMContentLoaded', playBgm);
+
+        // Try play on any user interaction
+        document.addEventListener('click', playBgm, { once: true });
+        document.addEventListener('touchstart', playBgm, { once: true });
+        document.addEventListener('keydown', playBgm, { once: true });
+
         // Scene Navigation Logic
         function showIntro() {
             document.getElementById('scene-landing').style.display = 'none';
