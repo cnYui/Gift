@@ -158,13 +158,13 @@
     <!-- Scene 1: Landing Page (from code.html) -->
     <div id="scene-landing" class="scene flex flex-col relative overflow-hidden text-gray-800 dark:text-gray-100">
         <div class="absolute inset-0 w-full h-full z-0">
-            <img src="6d35f26545223a4891b9423c23dfc06e.png" class="w-full h-full object-cover" alt="Background">
+            <img src="images/6d35f26545223a4891b9423c23dfc06e.png" class="w-full h-full object-cover" alt="Background">
         </div>
         
         <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 fixed inset-0 pointer-events-none">
             <div class="relative group cursor-pointer animate-pulse-soft mb-16 pointer-events-auto">
                 <button onclick="showIntro()" class="relative w-48 h-48 flex items-center justify-center transform transition-transform scale-110 active:scale-105 hover:scale-[1.2] transition-all duration-300">
-                    <img src="89a7c0040b81807be5ee986bce01b3a4.png" alt="Start" class="absolute inset-0 w-full h-full object-contain drop-shadow-xl z-0">
+                    <img src="images/89a7c0040b81807be5ee986bce01b3a4.png" alt="Start" class="absolute inset-0 w-full h-full object-contain drop-shadow-xl z-0">
                     <span class="relative z-10 text-4xl font-bold text-white" style="font-family: 'Microsoft YaHei', '微软雅黑', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
                         开始
                     </span>
@@ -176,7 +176,7 @@
     <!-- Scene 2: Intro Page (from gift_home.html) -->
     <div id="scene-intro" class="scene flex flex-col relative overflow-hidden text-gray-800 selection:bg-primary-red selection:text-white" style="display: none;">
         <div class="fixed inset-0 w-full h-full z-[-1]">
-            <img src="background.png" class="w-full h-full object-cover" alt="Background">
+            <img src="images/background.png" class="w-full h-full object-cover" alt="Background">
         </div>
         
         <div class="fixed inset-0 z-10 w-full h-full flex flex-col items-center justify-center px-6 pointer-events-none">
@@ -192,7 +192,7 @@
                     <p class="text-primary-red/70 dark:text-primary-red/80 text-shadow-custom-light dark:text-shadow-custom-dark">请带着轻松的心情参与</p>
                 </div>
             </div>
-            <div class="mt-12">
+            <div class="mt-12 text-center">
                  <button onclick="showMain()" class="bg-white dark:bg-zinc-800 border-[6px] border-primary-red/30 text-primary-red text-2xl py-3 px-12 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-200 font-bold tracking-widest">
                     下一页
                 </button>
@@ -204,7 +204,7 @@
     <!-- Scene 3: Main App (original index.html content) -->
     <div id="scene-main" class="scene pb-20" style="display: none;">
         <header class="p-6 flex justify-end items-center sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm">
-            <img alt="VibeHacks #02" class="h-10 transform rotate-1 drop-shadow-sm" src="vibehacks_logo.png"/>
+            <img alt="VibeHacks #02" class="h-10 transform rotate-1 drop-shadow-sm" src="images/vibehacks_logo.png"/>
             <div class="ml-3 text-secondary font-yakuhei font-bold text-lg tracking-wider">
                 圣诞礼物派送
             </div>
@@ -213,7 +213,7 @@
             <!-- Page 1 -->
             <div id="page-1" class="page active space-y-4 pt-24 w-full pointer-events-auto">
                 <div class="bg-card-light dark:bg-card-dark rounded-3xl p-6 relative shadow-festive pb-20">
-                    <img alt="decoration" class="absolute -top-6 -right-4 w-16 h-16 transform -rotate-[30deg] pointer-events-none z-10 drop-shadow-md" src="x_mark.png"/>
+                    <img alt="decoration" class="absolute -top-6 -right-4 w-16 h-16 transform -rotate-[30deg] pointer-events-none z-10 drop-shadow-md" src="images/x_mark.png"/>
                     <div class="mb-6">
                         <p class="text-text-main dark:text-gray-300 font-yakuhei font-bold text-lg mb-2">
                             为了那位与你素未谋面的圣诞伙伴，你为 TA 准备了怎样的一份小小小意呢？
@@ -285,31 +285,39 @@
             <!-- Page 7 -->
             <div id="page-7" class="page space-y-4 pb-12 pt-24 w-full pointer-events-auto">
                 <div class="bg-card-light dark:bg-card-dark rounded-3xl p-6 relative shadow-festive pb-20">
-                    <img alt="decoration" class="absolute -top-6 -right-4 w-16 h-16 transform -rotate-[30deg] pointer-events-none z-10 drop-shadow-md" src="x_mark.png"/>
+                    <img alt="decoration" class="absolute -top-6 -right-4 w-16 h-16 transform -rotate-[30deg] pointer-events-none z-10 drop-shadow-md" src="images/x_mark.png"/>
                     <div class="space-y-6">
-                        <div>
+                        <div class="mb-6">
                             <h4 class="text-gray-500 dark:text-gray-400 font-bold text-sm mb-3 font-yakuhei">选择你的卡面</h4>
-                            <div class="flex justify-between gap-2 overflow-x-auto pb-2">
-                                <button class="card-option w-16 h-12 rounded-lg bg-[#CBFDB0] border-2 border-[#52DB98] flex-shrink-0 shadow-sm"></button>
-                                <button class="card-option w-16 h-12 rounded-lg bg-[#FFCBE3] border-2 border-[#82DDF0] flex-shrink-0 shadow-sm"></button>
-                                <button class="card-option w-16 h-12 rounded-lg bg-[#FF7D7D] border-2 border-[#FDD96D] flex-shrink-0 shadow-sm selected"></button>
-                                <button class="card-option w-16 h-12 rounded-lg bg-[#9F6DFA] border-2 border-[#E789FF] flex-shrink-0 shadow-sm"></button>
+                            <div class="flex justify-between items-center gap-2">
+                                <button class="card-option w-16 h-24 rounded-lg overflow-hidden border-2 border-transparent hover:scale-105 transition-transform" data-value="卡面1">
+                                    <img src="images/card_1.png" alt="卡面1" class="w-full h-full object-contain">
+                                </button>
+                                <button class="card-option w-16 h-24 rounded-lg overflow-hidden border-2 border-transparent hover:scale-105 transition-transform" data-value="卡面2">
+                                    <img src="images/card_2.png" alt="卡面2" class="w-full h-full object-contain">
+                                </button>
+                                <button class="card-option w-16 h-24 rounded-lg overflow-hidden border-2 border-transparent hover:scale-105 transition-transform" data-value="卡面3">
+                                    <img src="images/card_3.png" alt="卡面3" class="w-full h-full object-contain">
+                                </button>
+                                <button class="card-option w-16 h-24 rounded-lg overflow-hidden border-2 border-transparent hover:scale-105 transition-transform" data-value="卡面4">
+                                    <img src="images/card_4.png" alt="卡面4" class="w-full h-full object-contain">
+                                </button>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-gray-500 dark:text-gray-400 font-bold text-sm mb-3 font-yakuhei">选择你的装饰</h4>
                             <div class="flex justify-between items-center gap-2">
-                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110">
-                                    <span class="material-icons-round text-green-700 text-3xl">local_florist</span>
+                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰1">
+                                    <img src="images/decoration_1.png" alt="装饰1" class="w-8 h-8 object-contain">
                                 </button>
-                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110">
-                                    <span class="material-icons-round text-yellow-400 text-3xl">auto_awesome</span>
+                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰2">
+                                    <img src="images/decoration_2.png" alt="装饰2" class="w-8 h-8 object-contain">
                                 </button>
-                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110 selected">
-                                    <span class="material-icons-round text-red-500 text-4xl">favorite</span>
+                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110 selected" data-value="装饰3">
+                                    <img src="images/decoration_3.png" alt="装饰3" class="w-9 h-9 object-contain">
                                 </button>
-                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110">
-                                    <span class="material-icons-round text-yellow-500 text-3xl">filter_vintage</span>
+                                <button class="decoration-option p-2 hover:bg-white/50 dark:hover:bg-white/10 rounded-full transition-colors transform hover:scale-110" data-value="装饰4">
+                                    <img src="images/decoration_4.png" alt="装饰4" class="w-8 h-8 object-contain">
                                 </button>
                             </div>
                         </div>
@@ -338,13 +346,13 @@
                 </div>
             </div>
         </main>
-        <img alt="background decoration" class="fixed bottom-20 right-0 w-64 opacity-80 pointer-events-none z-0" src="tree_bg.png"/>
+        <img alt="background decoration" class="fixed bottom-20 right-0 w-64 opacity-80 pointer-events-none z-0" src="images/tree_bg.png"/>
     </div>
 
     <!-- Scene 4: Success Page -->
     <div id="scene-success" class="scene flex flex-col relative overflow-hidden" style="display: none;">
         <div class="fixed inset-0 w-full h-full z-0">
-            <img src="624dbd172019ce18e5904f7508a03977.png" class="w-full h-full object-cover" alt="Success">
+            <img src="images/624dbd172019ce18e5904f7508a03977.png" class="w-full h-full object-cover" alt="Success">
         </div>
     </div>
 
@@ -605,7 +613,7 @@
                 
                 // Decoration
                 const decoration = document.createElement('img');
-                decoration.src = 'x_mark.png';
+                decoration.src = 'images/x_mark.png';
                 decoration.alt = 'decoration';
                 decoration.className = 'absolute -top-6 -right-4 w-16 h-16 transform -rotate-[30deg] pointer-events-none z-10 drop-shadow-md';
                 card.appendChild(decoration);
@@ -727,22 +735,14 @@
             let selectedCard = "";
             const cardOption = document.querySelector('.card-option.selected');
             if (cardOption) {
-                // 提取背景颜色类名或样式
-                const classes = Array.from(cardOption.classList);
-                // 查找以 bg-[# 开头的类
-                const bgClass = classes.find(c => c.startsWith('bg-[#'));
-                selectedCard = bgClass || "默认";
+                selectedCard = cardOption.getAttribute('data-value') || "";
             }
 
             // 获取选中的装饰
             let selectedDecoration = "";
             const decorationOption = document.querySelector('.decoration-option.selected');
             if (decorationOption) {
-                // 提取内部 span 的 material icon 文本
-                const iconSpan = decorationOption.querySelector('span.material-icons-round');
-                if (iconSpan) {
-                    selectedDecoration = iconSpan.textContent.trim();
-                }
+                selectedDecoration = decorationOption.getAttribute('data-value') || "";
             }
 
             return {
@@ -753,7 +753,9 @@
                 "微信账号": document.getElementById("wechat")?.value || "",
                 "用户选择题的答案": collectQuizAnswers(),
                 "用户祝福话语": document.getElementById("blessing-input")?.value || "",
-                "用户星座": document.getElementById("zodiac")?.value || ""
+                "用户星座": document.getElementById("zodiac")?.value || "",
+                "选择卡面": selectedCard,
+                "选择装饰": selectedDecoration
             };
         }
 

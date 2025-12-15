@@ -252,7 +252,9 @@ def generate_mock_record(index: int) -> Dict:
         "微信账号": wechat,
         "用户选择题的答案": generate_quiz_answers(),
         "用户祝福话语": random.choice(BLESSINGS),
-        "用户星座": random.choice(ZODIACS)
+        "用户星座": random.choice(ZODIACS),
+        "选择卡面": f"卡面{random.randint(1, 4)}",
+        "选择装饰": f"装饰{random.randint(1, 4)}"
     }
 
 
